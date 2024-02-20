@@ -1,0 +1,154 @@
+.text-content {
+	$block: &;
+
+	margin: 100px 0;
+
+	@include mq(tablet) {
+		margin: 120px 0;
+	}
+
+	@include mq(desktop) {
+		margin: 180px 0;
+	}
+
+	&__inner {
+		@include grid;
+
+		&__no-gap {
+			column-gap: 0;
+		}
+	}
+
+	&__top {
+		grid-column: 1 / -1;
+
+		&__mobile-center {
+			text-align: center;
+
+			@include mq(tablet) {
+				text-align: start;
+			}
+		}
+
+		@include mq(tablet) {
+			grid-column: 1 / span 3;
+		}
+
+		@include mq(tablet-landscape) {
+			grid-column: 1 / span 4;
+		}
+	}
+
+	&__headline {
+		margin-bottom: $spacing-04;
+	}
+
+	&__text {
+		grid-column: 1 / -1;
+		margin-top: $spacing-04;
+
+		@include mq(tablet) {
+			grid-column: 5 / span 4;
+			margin-top: 0;
+		}
+
+		@include mq(tablet-landscape) {
+			grid-column: 5 / span 8;
+			column-count: 2;
+			column-gap: $spacing-07;
+		}
+
+		@include mq(desktop) {
+			column-gap: $spacing-08;
+		}
+	}
+
+	&__links {
+		display: block;
+		align-items: end;
+		justify-content: end;
+
+		grid-column: 1 / -1;
+		margin-top: $spacing-04;
+
+		&__padding {
+			padding: 0;
+			width: 100%;
+			text-align: center;
+		}
+
+		@include mq(tablet) {
+			grid-column: 5 / span 4;
+			margin-top: 0;
+
+			&__padding {
+				width: auto;
+				padding: 6rem 0 0  4rem;
+			}
+		}
+
+		@include mq(tablet-landscape) {
+			grid-column: 5 / span 8;
+			column-count: 1;
+			column-gap: $spacing-07;
+		}
+
+		@include mq(desktop) {
+			display: flex;
+			column-gap: $spacing-08;
+		}
+	}
+
+	&__footer-links {
+		grid-column: 1 / span 12;
+		column-count: 2;
+		//column-gap: $spacing-07;
+	}
+
+	&__left {
+		grid-column: 1 / -1;
+		background-color: #181818;
+		padding: $spacing-08;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@include mq(desktop) {
+			grid-column: 1 / span 6;
+		}
+	}
+
+	&__right {
+		grid-column: 1 / -1;
+		background-color: #C4132F;
+		padding: $spacing-08;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@include mq(desktop) {
+			grid-column: 7 / span 6;
+		}
+	}
+
+	&__black{
+		background-color: #181818;
+		color: white;
+		margin: 0;
+		padding: 10% 0;
+	}
+
+	&__no-padding{
+		padding: 0;
+	}
+
+	&__padding-top-0 {
+		padding-top: 0;
+	}
+
+	&__padding-bottom-4 {
+		padding-bottom: 4rem;
+	}
+}

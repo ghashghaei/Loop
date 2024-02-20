@@ -1,0 +1,22 @@
+.icon {
+	display: inline-block;
+	svg {
+		width: 1em;
+		height: 1em;
+		display: block;
+		fill: currentColor;
+	}
+	path {
+		fill: currentColor;
+	}
+	img {
+		height: 1.5em;
+		width: auto;
+		display: block;
+		margin: 0 10px;
+
+		@include mq(tablet) {
+			margin: 0;
+		}
+	}
+}

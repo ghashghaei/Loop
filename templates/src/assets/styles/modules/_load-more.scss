@@ -1,0 +1,132 @@
+.load-more {
+	$block: &;
+
+	grid-column: 1 / -1;
+	column-count: 1;
+	column-gap: 0;
+
+	&__2 {
+		column-count: 2;
+	}
+
+	&__4 {
+		column-count: 4;
+	}
+
+	&__5 {
+		column-count: 5;
+	}
+
+	&__6 {
+		column-count: 6;
+	}
+
+	.crew-name{
+		color: #C4132F;
+		font-weight: bolder;
+		text-transform: uppercase;
+		font-size: 1rem;
+
+		@include mq(desktop) {
+			font-size: 2rem;
+		}
+	}
+
+	.crew-duties{
+		color: black;
+	}
+
+	img{
+		display: block;
+		width: 100%;
+		filter: grayscale(100%);
+		transition: filter 0.3s;
+	}
+
+	img:hover {
+		filter: grayscale(0%);
+	}
+
+	.crew-container {
+		position: relative;
+	}
+
+	.crew-container:not(:last-child)  {
+		float: left;
+	}
+
+	.crew-container:last-child {
+		float: right;
+	}
+
+	.crew-overlay{
+		position: absolute;
+		bottom: 0;
+		background-color: #ffffff;
+		overflow: hidden;
+		width: 0;
+		height: 100%;
+		transition: .5s ease;
+		z-index: 2;
+	}
+
+	.crew-container:not(:last-child) .crew-overlay {
+		right: 0;
+	}
+
+	.crew-container:last-child .crew-overlay {
+		left: 0;
+	}
+
+	.crew-container:not(:last-child) img:hover + .crew-overlay {
+		width: 100%;
+		right: -100%;
+	}
+
+	.crew-container:last-child img:hover + .crew-overlay {
+		width: 100%;
+		left: -100%;
+	}
+
+	.crew-text {
+		white-space: nowrap;
+		color: white;
+		position: absolute;
+		overflow: hidden;
+		top: 75%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+
+		font-size: 15px;
+
+		@include mq(desktop) {
+			font-size: 20px;
+		}
+	}
+
+	&__center{
+		text-align: center;
+	}
+
+	&__end{
+		text-align: end;
+		margin: 15px;
+
+		.button{
+			margin: 0 10px;
+		}
+	}
+
+	&__button{
+		color: black;
+		background-color: white;
+		padding: 10px 40px;
+
+		margin-top: 20px;
+
+		@include mq(desktop) {
+			margin-top: 0;
+		}
+	}
+}
